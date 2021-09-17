@@ -7,12 +7,12 @@ const App = () => {
   const [text, setText] = useState("");
   const [type, setType] = useState("empty");
 
-  useEffect(() => {
-    const getNodes = async () => {
-      const data = await nodeService.getAll();
-      setNodes(data);
-    };
+  const getNodes = async () => {
+    const data = await nodeService.getAll();
+    setNodes(data);
+  };
 
+  useEffect(() => {
     getNodes();
   }, []);
 
@@ -25,13 +25,19 @@ const App = () => {
         type,
       };
 
-      const added = await nodeService.addNode(newNode);
-      setNodes(nodes.concat(added));
+      await nodeService.addNode(newNode);
+      getNodes();
       setText("");
       setType("empty");
     } else {
       window.alert("Please, fill form");
     }
+  };
+
+  const handleRemove = async (id) => {
+    await nodeService.removeNode(id);
+
+    getNodes();
   };
 
   return (
@@ -56,7 +62,7 @@ const App = () => {
         <button type="submit">Add</button>
       </form>
       {nodes.map((node) => {
-        return <Node key={node.id} node={node} />;
+        return <Node key={node.id} node={node} handleRemove={handleRemove} />;
       })}
     </div>
   );

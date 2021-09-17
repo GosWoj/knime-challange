@@ -6,12 +6,12 @@
       "type": "manipulator"
     },
     {
-      "name": "Another",
+      "name": "Adding",
       "type": "predictor",
       "id": 2
     },
     {
-      "name": "something",
+      "name": "checking",
       "type": "source",
       "id": 3
     }
