@@ -4,6 +4,16 @@
       "id": 1,
       "name": "Testing",
       "type": "manipulator"
+    },
+    {
+      "name": "Another",
+      "type": "predictor",
+      "id": 2
+    },
+    {
+      "name": "something",
+      "type": "source",
+      "id": 3
     }
   ]
 }

@@ -1,9 +1,10 @@
 import React from "react";
 
-const Node = ({ text }) => {
+const Node = ({ node }) => {
   return (
     <div>
-      <h3>{text}</h3>
+      <h2>{node.name}</h2>
+      <h4>{node.type}</h4>
     </div>
   );
 };

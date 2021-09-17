@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import nodeService from "./services/nodeService";
+import Node from "./components/Node";
 
 const App = () => {
   const [nodes, setNodes] = useState([]);
   const [text, setText] = useState("");
-  const [type, setType] = useState(null);
+  const [type, setType] = useState("empty");
 
   useEffect(() => {
     const getNodes = async () => {
@@ -15,16 +16,22 @@ const App = () => {
     getNodes();
   }, []);
 
-  const handleAdd = (e) => {
+  const handleAdd = async (e) => {
     e.preventDefault();
 
-    const newNode = {
-      name: text,
-      type,
-    };
+    if (text && type !== "empty") {
+      const newNode = {
+        name: text,
+        type,
+      };
 
-    setNodes(nodes.concat(newNode));
-    setText("");
+      const added = await nodeService.addNode(newNode);
+      setNodes(nodes.concat(added));
+      setText("");
+      setType("empty");
+    } else {
+      window.alert("Please, fill form");
+    }
   };
 
   return (
@@ -36,7 +43,12 @@ const App = () => {
           onChange={(e) => setText(e.target.value)}
           name="node"
         />
-        <select name="type" onChange={(e) => setType(e.target.value)}>
+        <select
+          name="type"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="empty">--</option>
           <option value="source">Source</option>
           <option value="manipulator">Manipulator</option>
           <option value="predictor">Predictor</option>
@@ -44,12 +56,7 @@ const App = () => {
         <button type="submit">Add</button>
       </form>
       {nodes.map((node) => {
-        return (
-          <div key={node.id}>
-            <h2>{node.name}</h2>
-            <h4>{node.type}</h4>
-          </div>
-        );
+        return <Node key={node.id} node={node} />;
       })}
     </div>
   );

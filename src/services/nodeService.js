@@ -8,8 +8,15 @@ const getAll = async () => {
   return response.data;
 };
 
+const addNode = async (node) => {
+  const response = await axios.post(baseURL, node);
+
+  return response.data;
+};
+
 const nodeService = {
   getAll,
+  addNode,
 };
 
 export default nodeService;
