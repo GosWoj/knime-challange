@@ -78,26 +78,24 @@ const App = () => {
           <NodeList nodes={nodes} handleDelete={handleDelete} />
         </Grid>
         <Grid item>
+          <Typography variant="h4" gutterBottom sx={{ margin: "0.5rem 1rem" }}>
+            Workflow:
+          </Typography>
           <Box
             sx={{
-              display: "grid",
-              justifyItems: "center",
+              display: "flex",
+              direction: "row",
             }}
           >
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{ margin: "0.5rem 1rem" }}
-            >
-              Workflow:
-            </Typography>
             <AddIcon onClick={handleOpenLeft} />
             {workflow.length > 0 ? (
               <NodeWorkflowList
                 workflow={workflow}
                 handleDeleteNode={handleDeleteNode}
               />
-            ) : null}
+            ) : (
+              "Add first node"
+            )}
             <AddIcon onClick={handleOpenRight} />
             <Dialog open={open} onClose={handleClose}>
               <NodeWorkflowSearch
