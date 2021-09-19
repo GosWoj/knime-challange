@@ -38,7 +38,11 @@ const Node = ({ node, handleDelete, handleUpdate }) => {
       ) : (
         <>
           <ListItemText primary={node.name} secondary={node.type} />
-          <Button variant="contained" onClick={() => handleClick(node.id)}>
+          <Button
+            id="delete"
+            variant="contained"
+            onClick={() => handleClick(node.id)}
+          >
             Delete
           </Button>
         </>
