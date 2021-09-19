@@ -14,6 +14,46 @@
       "name": "checking",
       "type": "source",
       "id": 3
+    },
+    {
+      "name": "something",
+      "type": "manipulator",
+      "id": 4
+    },
+    {
+      "name": "wd",
+      "type": "source",
+      "id": 5
+    },
+    {
+      "name": "ade",
+      "type": "predictor",
+      "id": 6
+    },
+    {
+      "name": "esf",
+      "type": "source",
+      "id": 7
+    },
+    {
+      "name": "fsef",
+      "type": "manipulator",
+      "id": 8
+    },
+    {
+      "name": "sdfsf",
+      "type": "source",
+      "id": 9
+    },
+    {
+      "name": "vdvdf",
+      "type": "manipulator",
+      "id": 10
+    },
+    {
+      "name": "fer",
+      "type": "source",
+      "id": 11
     }
   ]
 }

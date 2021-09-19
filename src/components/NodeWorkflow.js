@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMinus } from "react-icons/fa";
+import Button from "@mui/material/Button";
 import Icon from "./Icon";
 
 const NodeWorkflow = ({ node, handleDelete }) => {
@@ -14,7 +14,9 @@ const NodeWorkflow = ({ node, handleDelete }) => {
         <Icon type={node.type} />
       </div>
       <h4>{node.type}</h4>
-      <FaMinus onClick={() => handleClick(node.id)} />
+      <Button sx={{ color: "red" }} onClick={() => handleClick(node.id)}>
+        Remove
+      </Button>
     </div>
   );
 };

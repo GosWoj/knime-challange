@@ -14,7 +14,7 @@ const addNode = async (node) => {
   return response.data;
 };
 
-const removeNode = async (id) => {
+const deleteNode = async (id) => {
   const response = await axios.delete(`${baseURL}/${id}`);
 
   return response.data;
@@ -23,7 +23,7 @@ const removeNode = async (id) => {
 const nodeService = {
   getAll,
   addNode,
-  removeNode,
+  deleteNode,
 };
 
 export default nodeService;

@@ -1,26 +1,15 @@
 import React from "react";
-import { IconContext } from "react-icons/lib";
-import { SiNodeRed } from "react-icons/si";
+import CenterFocusStrongIcon from "@mui/icons-material/CenterFocusStrong";
+import CasinoIcon from "@mui/icons-material/Casino";
+import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 
 const Icon = ({ type }) => {
   if (type === "source") {
-    return (
-      <IconContext.Provider value={{ color: "orange", size: "3rem" }}>
-        <SiNodeRed />
-      </IconContext.Provider>
-    );
+    return <CenterFocusStrongIcon fontSize="large" sx={{ color: "orange" }} />;
   } else if (type === "manipulator") {
-    return (
-      <IconContext.Provider value={{ color: "#fff600", size: "3rem" }}>
-        <SiNodeRed />
-      </IconContext.Provider>
-    );
+    return <CasinoIcon fontSize="large" sx={{ color: "red" }} />;
   } else {
-    return (
-      <IconContext.Provider value={{ color: "green", size: "3rem" }}>
-        <SiNodeRed />
-      </IconContext.Provider>
-    );
+    return <CenterFocusWeakIcon fontSize="large" sx={{ color: "green" }} />;
   }
 };
 
