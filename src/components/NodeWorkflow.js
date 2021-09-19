@@ -1,5 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Icon from "./Icon";
 
 const NodeWorkflow = ({ node, handleDelete }) => {
@@ -8,16 +11,15 @@ const NodeWorkflow = ({ node, handleDelete }) => {
   };
 
   return (
-    <div>
-      <h2>{node.name}</h2>
-      <div>
+    <ListItem>
+      <ListItemAvatar>
         <Icon type={node.type} />
-      </div>
-      <h4>{node.type}</h4>
+      </ListItemAvatar>
+      <ListItemText primary={node.name} secondary={node.type} />
       <Button sx={{ color: "red" }} onClick={() => handleClick(node.id)}>
         Remove
       </Button>
-    </div>
+    </ListItem>
   );
 };
 
