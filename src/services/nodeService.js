@@ -20,10 +20,18 @@ const deleteNode = async (id) => {
   return response.data;
 };
 
+const updateNode = async (newNode) => {
+  const id = newNode.id;
+  const response = await axios.put(`${baseURL}/${id}`, newNode);
+
+  return response.data;
+};
+
 const nodeService = {
   getAll,
   addNode,
   deleteNode,
+  updateNode,
 };
 
 export default nodeService;

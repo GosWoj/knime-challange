@@ -21,29 +21,9 @@
       "id": 4
     },
     {
-      "name": "wd",
-      "type": "source",
-      "id": 5
-    },
-    {
-      "name": "ade",
-      "type": "predictor",
-      "id": 6
-    },
-    {
-      "name": "esf",
+      "name": "esf21",
       "type": "source",
       "id": 7
-    },
-    {
-      "name": "fsef",
-      "type": "manipulator",
-      "id": 8
-    },
-    {
-      "name": "sdfsf",
-      "type": "source",
-      "id": 9
     },
     {
       "name": "vdvdf",
@@ -51,9 +31,24 @@
       "id": 10
     },
     {
-      "name": "fer",
-      "type": "source",
+      "name": "Starter",
+      "type": "predictor",
       "id": 11
+    },
+    {
+      "name": "Controller",
+      "type": "predictor",
+      "id": 12
+    },
+    {
+      "name": "Another",
+      "type": "source",
+      "id": 13
+    },
+    {
+      "name": "One more",
+      "type": "manipulator",
+      "id": 14
     }
   ]
 }

@@ -35,6 +35,11 @@ const App = () => {
     getNodes();
   };
 
+  const handleUpdate = async (object) => {
+    await nodeService.updateNode(object);
+    getNodes();
+  };
+
   const handleAddNode = (object) => {
     const selectedNode = nodes.filter((n) => n.id === object.id);
     if (object.side === "right") {
@@ -75,7 +80,11 @@ const App = () => {
             Add new node:
           </Typography>
           <AddNodeForm handleAdd={handleAdd} />
-          <NodeList nodes={nodes} handleDelete={handleDelete} />
+          <NodeList
+            nodes={nodes}
+            handleDelete={handleDelete}
+            handleUpdate={handleUpdate}
+          />
         </Grid>
         <Grid item>
           <Typography variant="h4" gutterBottom sx={{ margin: "0.5rem 1rem" }}>
