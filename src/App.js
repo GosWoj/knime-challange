@@ -84,7 +84,6 @@ const App = () => {
               justifyItems: "center",
             }}
           >
-            <AddIcon onClick={handleOpenLeft} />
             <Typography
               variant="h4"
               gutterBottom
@@ -92,6 +91,7 @@ const App = () => {
             >
               Workflow:
             </Typography>
+            <AddIcon onClick={handleOpenLeft} />
             {workflow.length > 0 ? (
               <NodeWorkflowList
                 workflow={workflow}
