@@ -11,15 +11,17 @@ const NodeWorkflow = ({ node, handleDelete }) => {
   };
 
   return (
-    <ListItem>
-      <ListItemAvatar>
-        <Icon type={node.type} />
-      </ListItemAvatar>
-      <ListItemText primary={node.name} secondary={node.type} />
+    <div>
+      <ListItem>
+        <ListItemAvatar>
+          <Icon type={node.type} />
+        </ListItemAvatar>
+        <ListItemText primary={node.name} secondary={node.type} />
+      </ListItem>
       <Button sx={{ color: "red" }} onClick={() => handleClick(node.id)}>
         Remove
       </Button>
-    </ListItem>
+    </div>
   );
 };
 

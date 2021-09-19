@@ -6,11 +6,15 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import TextField from "@mui/material/TextField";
 import Icon from "./Icon";
 
-const NodeWorkflowSearch = ({ nodes, workflow, handleAddNode }) => {
+const NodeWorkflowSearch = ({ nodes, workflow, handleAddNode, side }) => {
   const [search, setSearch] = useState("");
 
   const handleClick = (id) => {
-    handleAddNode(id);
+    const object = {
+      id,
+      side,
+    };
+    handleAddNode(object);
     setSearch("");
   };
 
