@@ -1,5 +1,4 @@
 import React from "react";
-import List from "@mui/material/List";
 import NodeWorkflow from "./NodeWorkflow";
 
 const NodeWorkflowList = ({ workflow, handleDeleteNode }) => {
@@ -8,7 +7,7 @@ const NodeWorkflowList = ({ workflow, handleDeleteNode }) => {
   };
 
   return (
-    <List>
+    <div style={{ display: "flex", direction: "row", padding: "1rem" }}>
       {workflow.map((work) => {
         return (
           <NodeWorkflow
@@ -18,7 +17,7 @@ const NodeWorkflowList = ({ workflow, handleDeleteNode }) => {
           />
         );
       })}
-    </List>
+    </div>
   );
 };
 
