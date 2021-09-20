@@ -30,7 +30,7 @@ test("Renders correct amount of nodes", () => {
 
   const listItems = component.getAllByRole("listitem");
 
-  expect(listItems.length).toBe(4);
+  expect(listItems.length).toBe(nodes.length);
 });
 
 test("Deleting gets called when clicked", () => {
